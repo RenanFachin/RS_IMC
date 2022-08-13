@@ -14,7 +14,9 @@
     --bg-color: #040924;
     --bg-card: #FFFFFF;
     --bg-button: #02799D;
+    --bg-button-hover: #024357;
     --bg-error: #F03E3E;
+    --bg-input: #DCE2E9;
 
     /* Font Colors */
     --fc-title: #0C3440;
@@ -31,8 +33,13 @@
 
 body{
     background-color: var(--bg-color);
-    font-size: 1.6rem;
     font-family: var(--ff-page);
+}
+
+body, input, button {
+    /* Foi feito isso porque fontsize somente no body não aplicaria nos elementos input e button */
+    font-size: 1.6rem;
+    line-height: 2rem;
 }
 
 .container{
@@ -49,3 +56,81 @@ body{
     box-shadow: 0 0.2rem 0.4rem rgb(0,0,0,0.1);
     border-radius: 0.6rem;
 }
+
+.title{
+    font-size: 3.2rem;
+    line-height: 4rem;
+    color: var(--fc-title);
+}
+
+.container{
+    padding: 1.6rem;
+}
+
+form{
+    width: 30rem;
+}
+
+form h1{
+    margin-bottom: 3.2rem;
+}
+
+form label{
+    /* Label possui por padrão um displa inline não aceita a propriedade margin */
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: var(--fc-label);
+
+    display: block;
+    margin-bottom: 0.8rem; 
+}
+
+form input{
+    width: 100%;
+    color: var(--fc-input);
+    border: 1px solid var(--bd-input);
+    background: var(--bg-input);
+    padding: 1.6rem;
+    border-radius: 0.4rem;
+}
+
+form input:focus{
+    /* o :focus é para quando estiver "clicado */
+    outline: 2px solid var(--ot-inputColor);
+}
+
+form input::placeholder{
+    /* ::placeholder é uma pseudo-class para estilizar as caracteristicas do placeholder */
+    color: var(--fc-placeholder);
+}
+
+.input-wrapper + .input-wrapper{
+    /* isso significa: Aplicar margin top somente no inputwrapper anterior a ele */
+    margin-top: 1.6rem;
+}
+
+button{
+    margin-top: 3.2rem;
+    padding: 1.6rem;
+    width: 100%;
+
+    border-radius: 0.4rem;
+    border:none;
+    background-color: var(--bg-button);
+    color: var(--fc-button);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background 0.4s;
+}
+
+button:hover{
+    background: var(--bg-button-hover);
+}
+
