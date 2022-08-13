@@ -1,24 +1,11 @@
+// Importando
+import { Modal } from './modal.js'
+import { IMC } from './imc.js'
+
 // variáveis
 const form = document.querySelector('form')
 const inputWeight = document.querySelector('#weight')
 const inputHeight = document.querySelector('#height')
-
-// Constante Modal recebendo objetos que vão receber funções para serem chamadas futuramente pelo código
-// ES6
-const Modal = {
-
-    // variáveis do MODAL
-    wrapper: document.querySelector('.modal-wrapper'),
-    message: document.querySelector('.modal-wrapper .title span'),
-    buttonClose: document.querySelector('.modal-wrapper button.close'),
-
-    open: function() {
-        Modal.wrapper.classList.add('open') // Adicionando uma classe com a manipulação da DOM 
-    },
-    close: function() {
-        Modal.wrapper.classList.remove('open')
-    }
-}
 
 
 // Fazendo o submit do formulário
@@ -53,13 +40,7 @@ form.onsubmit = function(event) {
 
 }
 
-function IMC(weight, height) {
-    return (weight / ((height/100) ** 2)).toFixed(2)
-}
 
 
-// Função para remover a classe OPEN do modal quando o botão de fechar for clicado
-Modal.buttonClose.onclick = () => {
-    Modal.close()
-}
+
 
