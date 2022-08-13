@@ -109,7 +109,7 @@ form input::placeholder{
     margin-top: 1.6rem;
 }
 
-button{
+form button{
     margin-top: 3.2rem;
     padding: 1.6rem;
     width: 100%;
@@ -134,3 +134,45 @@ button:hover{
     background: var(--bg-button-hover);
 }
 
+/* Modal/Pop-up */
+
+.modal-wrapper.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-wrapper{
+    position: absolute;
+    /* Position absolut libera uma série de propriedades como top, bottom, left, right e etc */
+    inset: 0; /*Significa: top,bottom,right e left sendo iguais a 0*/
+
+    display: grid;
+    place-content: center;
+    background: rgba(0,0,0,0.7);
+
+    /* Fazendo desaparecer por padrão */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal{
+    /* Setando relative no modal para que o button dentro da div modal seja absolute em relação a ele */
+    position: relative;
+}
+
+.modal-wrapper button{
+    background: none;
+    border: none;
+
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    cursor: pointer;
+
+    transition: transform 0.3s;
+}
+
+.modal-wrapper button:hover{
+    transform: scale(1.15);
+}
