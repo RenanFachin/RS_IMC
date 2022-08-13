@@ -176,3 +176,35 @@ button:hover{
 .modal-wrapper button:hover{
     transform: scale(1.15);
 }
+
+/* Alert error */
+.alert-error.open{
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.alert-error{
+    position: absolute;
+    background-color: var(--bg-error);
+
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Left e right 0 faz com que o elemento fique esticado */
+
+    font-weight: bold;
+    text-align: center;
+    color: var(--fc-error);
+
+    padding: 0.8rem 0;
+
+    /* Fazendo desaparecer por padrão */
+    opacity: 0;
+    visibility: hidden;
+
+
+    transform: translateY(-3rem);
+    transition: transform 0.7s;
+}
