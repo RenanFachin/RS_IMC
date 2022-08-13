@@ -3,6 +3,12 @@ const form = document.querySelector('form')
 const inputWeight = document.querySelector('#weight')
 const inputHeight = document.querySelector('#height')
 
+// variáveis do MODAL
+const modalWrapper = document.querySelector('.modal-wrapper')
+const modalMessage = document.querySelector('.modal-wrapper .title span')
+const modalBtnClose = document.querySelector('.modal-wrapper button.close')
+
+
 // Fazendo o submit do formulário
 // 3 maneiras de criar e atribuir a um evento
 // maneira 1: form.onsubmit = function() {}
@@ -27,10 +33,17 @@ form.onsubmit = function(event) {
 
     // criando uma variável para receber o resultado da função IMC que está sendo passada as const capturadas pelo input
     const result = IMC(weight,height)
-    console.log(result)
-}
+    const message = `Seu IMC é de ${result}`
 
+    // Fazendo o modal aparecer e apresentar a mensagem
+    modalMessage.innerText = `${message}` // Alterando o conteúdo de algo utilizando a manipulação da DOM
+    modalWrapper.classList.add('open') // Adicionando uma classe com a manipulação da DOM 
+}
 
 function IMC(weight, height) {
     return (weight / ((height/100) ** 2)).toFixed(2)
 }
+
+
+
+
