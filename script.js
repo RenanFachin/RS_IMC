@@ -45,5 +45,8 @@ function IMC(weight, height) {
 }
 
 
-
+// Função para remover a classe OPEN do modal quando o botão de fechar for clicado
+modalBtnClose.onclick = () => {
+    modalWrapper.classList.remove('open')
+}
 
