@@ -15,8 +15,20 @@ export const Modal = {
     }
 }
 
-
 // Função para remover a classe OPEN do modal quando o botão de fechar for clicado
 Modal.buttonClose.onclick = () => {
     Modal.close()
+}
+
+
+// Fazendo a funcionalidade de clicar no ESC para fazer o modal fechar
+// O primeiro "nome" no event listener é o "comando" que chamará ele. O segundo é uma função que será executada nesta chamada
+window.addEventListener('keydown', handleKeyDown)
+
+// Função para capturar as teclas que foram clicadas
+export function handleKeyDown(event){
+    // Quando a tecla ESCAPE (esc) for clicada acontecerá ...
+    if(event.key === 'Escape'){
+        Modal.close()
+    }
 }
