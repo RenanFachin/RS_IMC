@@ -3,17 +3,19 @@ const form = document.querySelector('form')
 const inputWeight = document.querySelector('#weight')
 const inputHeight = document.querySelector('#height')
 
-// variáveis do MODAL
-const modalWrapper = document.querySelector('.modal-wrapper')
-const modalMessage = document.querySelector('.modal-wrapper .title span')
-const modalBtnClose = document.querySelector('.modal-wrapper button.close')
-
+// Constante Modal recebendo objetos que vão receber funções para serem chamadas futuramente pelo código
 const Modal = {
+
+    // variáveis do MODAL
+    wrapper: document.querySelector('.modal-wrapper'),
+    message: document.querySelector('.modal-wrapper .title span'),
+    buttonClose: document.querySelector('.modal-wrapper button.close'),
+
     open: function() {
-        modalWrapper.classList.add('open') // Adicionando uma classe com a manipulação da DOM 
+        Modal.wrapper.classList.add('open') // Adicionando uma classe com a manipulação da DOM 
     },
     close: function() {
-        modalWrapper.classList.remove('open')
+        Modal.wrapper.classList.remove('open')
     }
 }
 
@@ -45,7 +47,7 @@ form.onsubmit = function(event) {
     const message = `Seu IMC é de ${result}`
 
     // Fazendo o modal aparecer e apresentar a mensagem
-    modalMessage.innerText = `${message}` // Alterando o conteúdo de algo utilizando a manipulação da DOM
+    Modal.message.innerText = `${message}` // Alterando o conteúdo de algo utilizando a manipulação da DOM
     Modal.open()
 
 }
@@ -56,7 +58,7 @@ function IMC(weight, height) {
 
 
 // Função para remover a classe OPEN do modal quando o botão de fechar for clicado
-modalBtnClose.onclick = () => {
+Modal.buttonClose.onclick = () => {
     Modal.close()
 }
 
