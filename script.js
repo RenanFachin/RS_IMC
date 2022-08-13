@@ -23,4 +23,14 @@ form.onsubmit = function(event) {
     const weight = inputWeight.value
     const height = inputHeight.value
     // .value é o jeito com que pegamos o que digitado no input
+
+
+    // criando uma variável para receber o resultado da função IMC que está sendo passada as const capturadas pelo input
+    const result = IMC(weight,height)
+    console.log(result)
+}
+
+
+function IMC(weight, height) {
+    return (weight / ((height/100) ** 2)).toFixed(2)
 }
