@@ -29,6 +29,15 @@ form.onsubmit = function(event) {
     const height = inputHeight.value
     // .value é o jeito com que pegamos o que digitado no input
 
+    // Checando se é número
+    // Se um ou outro for verdadeiro (o value não é um número) ele vai mostrar um erro
+    // Se um dos dois returnar true é pq não temos um número digitado no input
+    const showAlertError = notANumber(weight) || notANumber(height)
+
+    if(showAlertError){
+        console.log('mostrar o alerta de erro')
+        return;
+    }
 
     // criando uma variável para receber o resultado da função IMC que está sendo passada as const capturadas pelo input
     const result = IMC(weight,height)
@@ -43,3 +52,10 @@ form.onsubmit = function(event) {
 
 
 
+function notANumber(value){
+    //isNaN vai retornar TRUE ou FALSE
+    // Se número = FALSE
+    // Se vazio = FALSE
+    // se NÃO número = TRUE
+    return isNaN(value) || value == ""
+}
