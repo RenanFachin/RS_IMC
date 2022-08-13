@@ -4,6 +4,7 @@ const inputWeight = document.querySelector('#weight')
 const inputHeight = document.querySelector('#height')
 
 // Constante Modal recebendo objetos que vão receber funções para serem chamadas futuramente pelo código
+// ES6
 const Modal = {
 
     // variáveis do MODAL
