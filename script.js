@@ -8,6 +8,15 @@ const modalWrapper = document.querySelector('.modal-wrapper')
 const modalMessage = document.querySelector('.modal-wrapper .title span')
 const modalBtnClose = document.querySelector('.modal-wrapper button.close')
 
+const Modal = {
+    open: function() {
+        modalWrapper.classList.add('open') // Adicionando uma classe com a manipulação da DOM 
+    },
+    close: function() {
+        modalWrapper.classList.remove('open')
+    }
+}
+
 
 // Fazendo o submit do formulário
 // 3 maneiras de criar e atribuir a um evento
@@ -37,7 +46,8 @@ form.onsubmit = function(event) {
 
     // Fazendo o modal aparecer e apresentar a mensagem
     modalMessage.innerText = `${message}` // Alterando o conteúdo de algo utilizando a manipulação da DOM
-    modalWrapper.classList.add('open') // Adicionando uma classe com a manipulação da DOM 
+    Modal.open()
+
 }
 
 function IMC(weight, height) {
@@ -47,6 +57,6 @@ function IMC(weight, height) {
 
 // Função para remover a classe OPEN do modal quando o botão de fechar for clicado
 modalBtnClose.onclick = () => {
-    modalWrapper.classList.remove('open')
+    Modal.close()
 }
 
