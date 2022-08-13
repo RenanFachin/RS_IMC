@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+    
+    /* Fonte utilizada */
+    --ff-page: 'Roboto', sans-serif;
+
+    /* Background Colors */
+    --bg-color: #040924;
+    --bg-card: #FFFFFF;
+    --bg-button: #02799D;
+    --bg-error: #F03E3E;
+
+    /* Font Colors */
+    --fc-title: #0C3440;
+    --fc-label: #00453A;
+    --fc-input: #212529;
+    --fc-placeholder:rgba(73,80,87,0.5);
+    --fc-button: white;
+    --fc-error: white;
+
+    /* Bordas */
+    --ot-inputColor: #02799D;
+    --bd-input: rgba(73,80,87,0.3);
+}
+
+body{
+    background-color: var(--bg-color);
+    font-size: 1.6rem;
+    font-family: var(--ff-page);
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    place-content: center; /* é a mesma coisa que align item center e justifify content center*/
+}
+
+.card{
+    padding: 4.8rem 6.4rem 6.4rem;
+    background: var(--bg-card);
+    max-width: 42.8rem;
+    margin: 0 auto;
+    box-shadow: 0 0.2rem 0.4rem rgb(0,0,0,0.1);
+    border-radius: 0.6rem;
+}
