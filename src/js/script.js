@@ -1,6 +1,7 @@
 // Importando
 import { Modal } from './modal.js'
 import { IMC } from './imc.js'
+import { AlertError } from './alert-error.js'
 
 // variáveis
 const form = document.querySelector('form')
@@ -35,9 +36,11 @@ form.onsubmit = function(event) {
     const showAlertError = notANumber(weight) || notANumber(height)
 
     if(showAlertError){
-        console.log('mostrar o alerta de erro')
+        AlertError.open()
         return;
     }
+
+    AlertError.close()
 
     // criando uma variável para receber o resultado da função IMC que está sendo passada as const capturadas pelo input
     const result = IMC(weight,height)
