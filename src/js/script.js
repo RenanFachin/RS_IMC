@@ -1,6 +1,6 @@
 // Importando
 import { Modal } from './modal.js'
-import { IMC } from './imc.js'
+import { IMC, notANumber } from './utils.js'
 import { AlertError } from './alert-error.js'
 
 // variáveis
@@ -54,11 +54,3 @@ form.onsubmit = function(event) {
 
 
 
-
-function notANumber(value){
-    //isNaN vai retornar TRUE ou FALSE
-    // Se número = FALSE
-    // Se vazio = FALSE
-    // se NÃO número = TRUE
-    return isNaN(value) || value == ""
-}
